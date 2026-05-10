@@ -1,0 +1,23 @@
+{
+  "id": "tool-registry-location",
+  "description": "Identify where tools are registered and list two tool names.",
+  "prompt": "Inspect the code and answer: where are tools registered, and what are two registered tools? Include the file path and registry name.",
+  "requires_writes": false,
+  "setup": {
+    "copy_repo": true
+  },
+  "rubric": [
+    {
+      "type": "final_response_contains",
+      "contains": "baremetal_agent/tools.py"
+    },
+    {
+      "type": "final_response_contains",
+      "contains": "TOOLS"
+    },
+    {
+      "type": "final_response_contains",
+      "contains": "read_file"
+    }
+  ]
+}

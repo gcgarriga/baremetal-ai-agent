@@ -1,0 +1,19 @@
+{
+  "id": "git-status-without-shell",
+  "description": "Report concise git status using dedicated tool, not shell.",
+  "prompt": "Use the available git status tool to report a concise repository status. Do not use shell_exec.",
+  "requires_writes": false,
+  "setup": {
+    "copy_repo": true
+  },
+  "rubric": [
+    {
+      "type": "tool_called",
+      "name": "git_status"
+    },
+    {
+      "type": "final_response_contains",
+      "regex": "(?i)(working tree|clean)"
+    }
+  ]
+}

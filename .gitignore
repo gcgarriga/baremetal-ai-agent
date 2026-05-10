@@ -1,0 +1,11 @@
+.gspec/
+__pycache__/
+*.pyc
+.env
+trajectory*.json
+.venv/
+dist/
+*.egg-info/
+.ruff_cache/
+.baremetal-eval-cache/
+.pytest_cache/

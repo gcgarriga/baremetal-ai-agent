@@ -1,0 +1,28 @@
+{
+  "id": "write-exact-result-file",
+  "description": "Write an exact result file without using shell_exec.",
+  "prompt": "Create a file named result.txt containing exactly this text: eval harness ok",
+  "requires_writes": true,
+  "rubric": [
+    {
+      "type": "tool_called_with",
+      "name": "write_file",
+      "arguments": {
+        "path": "result.txt"
+      }
+    },
+    {
+      "type": "file_exists",
+      "path": "result.txt"
+    },
+    {
+      "type": "file_contains",
+      "path": "result.txt",
+      "contains": "eval harness ok"
+    },
+    {
+      "type": "max_agent_steps",
+      "value": 4
+    }
+  ]
+}

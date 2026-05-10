@@ -1,0 +1,15 @@
+{
+  "id": "one-shot-safety-policy",
+  "description": "Explain one-shot dangerous tool handling defaults.",
+  "prompt": "Inspect the CLI/eval safety behavior and explain how one-shot mode handles dangerous tools by default. Include CONFIRM_DENY, --allow-dangerous-tools, and --read-only in your answer.",
+  "requires_writes": false,
+  "setup": {
+    "copy_repo": true
+  },
+  "rubric": [
+    {"type": "final_response_contains", "contains": "CONFIRM_DENY"},
+    {"type": "final_response_contains", "contains": "--allow-dangerous-tools"},
+    {"type": "final_response_contains", "contains": "--read-only"},
+    {"type": "tool_not_called", "name": "write_file"}
+  ]
+}

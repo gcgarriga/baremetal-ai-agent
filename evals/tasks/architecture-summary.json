@@ -1,0 +1,16 @@
+{
+  "id": "architecture-summary",
+  "description": "Summarize architecture flow after reading README.",
+  "prompt": "Inspect README.md, then summarize the architecture flow. Your final answer must explicitly mention cli.main, agent.run_agent_turn, and tools.execute_tool.",
+  "requires_writes": false,
+  "setup": {
+    "copy_repo": true
+  },
+  "rubric": [
+    {"type": "final_response_contains", "contains": "cli.main"},
+    {"type": "final_response_contains", "contains": "agent.run_agent_turn"},
+    {"type": "final_response_contains", "contains": "tools.execute_tool"},
+    {"type": "tool_not_called", "name": "write_file"},
+    {"type": "max_agent_steps", "value": 4}
+  ]
+}

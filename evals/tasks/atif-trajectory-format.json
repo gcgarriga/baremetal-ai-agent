@@ -1,0 +1,13 @@
+{
+  "id": "atif-trajectory-format",
+  "description": "Identify trajectory schema version while exported token metrics are verified from the artifact.",
+  "prompt": "Read baremetal_agent/trajectory.py and answer with the ATIF schema version exported by SCHEMA_VERSION.",
+  "requires_writes": false,
+  "setup": {
+    "copy_repo": true
+  },
+  "rubric": [
+    {"type": "final_response_contains", "contains": "ATIF-v1.4"},
+    {"type": "trajectory_atif", "schema_version": "ATIF-v1.4", "require_final_metrics": true}
+  ]
+}

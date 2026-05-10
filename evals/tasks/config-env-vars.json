@@ -1,0 +1,15 @@
+{
+  "id": "config-env-vars",
+  "description": "List key environment variables used for agent configuration.",
+  "prompt": "Inspect configuration-related source files and list the environment variables for model, API URL, max iterations, and working directory.",
+  "requires_writes": false,
+  "setup": {
+    "copy_repo": true
+  },
+  "rubric": [
+    {"type": "final_response_contains", "contains": "AGENT_MODEL"},
+    {"type": "final_response_contains", "contains": "AGENT_API_URL"},
+    {"type": "final_response_contains", "contains": "AGENT_MAX_ITERATIONS"},
+    {"type": "final_response_contains", "contains": "AGENT_WORKING_DIR"}
+  ]
+}
