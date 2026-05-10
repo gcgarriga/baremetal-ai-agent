@@ -1,6 +1,6 @@
-# Baremetal Agent
+# Baremetal AI Agent
 
-A tiny framework-free agent in Python. It shows the whole tool-use loop with
+A tiny agent runtime framework-free agent in Python. It shows the whole tool-use loop with
 raw LLM API calls, explicit tool schemas, and a small registry — no LangChain,
 no CrewAI, no agent abstraction layers. Read the source; the source *is* the
 framework.
