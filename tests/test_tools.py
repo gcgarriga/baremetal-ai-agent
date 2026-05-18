@@ -204,6 +204,13 @@ class TestCommandTools:
     def test_git_diff_redacts_and_truncates_large_diff(self, tmp_path):
         subprocess.run(["git", "init"], cwd=tmp_path, check=True, capture_output=True, text=True)
         subprocess.run(
+            ["git", "config", "core.hooksPath", "/dev/null"],
+            cwd=tmp_path,
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+        subprocess.run(
             ["git", "config", "user.email", "test@example.com"],
             cwd=tmp_path,
             check=True,
