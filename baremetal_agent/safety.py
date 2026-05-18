@@ -59,6 +59,6 @@ def sanitize_json_value(
             key: sanitize_json_value(item, max_string_chars=max_string_chars, label=label)
             for key, item in value.items()
         }
-    if isinstance(value, Sequence) and not isinstance(value, (str, bytes, bytearray)):
+    if isinstance(value, Sequence) and not isinstance(value, str | bytes | bytearray):
         return [sanitize_json_value(item, max_string_chars=max_string_chars, label=label) for item in value]
     return value
